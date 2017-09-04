@@ -24,13 +24,10 @@ npm install pho-js-client --save
 ```
 
 #### git
-#
-If the library is hosted at a git repository, e.g.
-https://github.com/YOUR_USERNAME/pho-js-client
-then install it via:
+
 
 ```shell
-    npm install YOUR_USERNAME/pho-js-client --save
+    npm install https://github.com/pho-clients/js --save
 ```
 
 ### For browser
