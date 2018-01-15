@@ -830,7 +830,7 @@
      */
     this.makeActor = function(opts, callback) {
       opts = opts || {};
-      var postBody = opts['param1'];
+      var postBody = JSON.stringify(opts);
 
 
       var pathParams = {
