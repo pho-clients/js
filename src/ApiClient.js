@@ -51,13 +51,15 @@
    * @alias module:ApiClient
    * @class
    */
-  var exports = function() {
+  var exports = function(baseURL) {
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
      * @default https://virtserver.swaggerhub.com/phonetworks/server-rest/1.1.0
      */
-    this.basePath = 'https://virtserver.swaggerhub.com/phonetworks/server-rest/1.1.0'.replace(/\/+$/, '');
+    this.basePath = baseURL
+      ? baseURL.replace(/\/+$/, '')
+      :'https://virtserver.swaggerhub.com/phonetworks/server-rest/1.1.0'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.
@@ -102,6 +104,10 @@
    * @param {Object} pathParams The parameter values to append.
    * @returns {String} The encoded path with parameter values substituted.
    */
+  exports.prototype.setBaseUrl = function(basePath) {
+    this.basePath = basePath;
+    return this.basePath
+  }
   exports.prototype.buildUrl = function(path, pathParams) {
     if (!path.match(/^\//)) {
       path = '/' + path;
