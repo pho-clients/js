@@ -48,8 +48,8 @@ Please follow the [installation](#installation) instruction and execute the foll
 
 ```javascript
 var phonetworks = require('pho-js-client');
-
-var api = new phonetworks.DefaultApi()
+var baseURL = 'http://83.149.67.212:1337'   // you can customize base url
+var api = new phonetworks.DefaultApi(baseURL) //if undefined, base url will be *https://virtserver.swaggerhub.com/phonetworks/server-rest/1.1.0*
 
 var opts = { 
   'value': "value_example" // {String} The value to update the key with.
